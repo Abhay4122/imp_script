@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload button</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+    <style>
+        .dv_centr{
+            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 310px;
+            padding: 0 50px; text-align: center; box-sizing: border-box; transition: all 0.3s ease 0.3s;
+        }
+        .dv_centr button{
+            position: relative; width: 100%; border: none; padding: 5px 0; cursor: pointer; outline: none;
+            border-radius: 50px; background: linear-gradient(#3d42c2, #373bae, #31349b);
+            transition: 0.5s;
+        }
+        .dv_centr button:hover{
+            background: linear-gradient(#31349b, #373bae, #3d42c2);
+        }
+        .dv_centr button p{
+            color: #fff; font-size: 22px; font-weight: 700; text-transform: uppercase; margin: 15px;
+        }
+        .dv_centr button .loding, .dv_centr button .fa{
+            position: absolute; top: 0; left: 0; bottom: 0; right: 0;
+        }
+        .dv_centr button .loding{
+            width: 0%; border-radius: 50px; background: linear-gradient(#3d42c2, #373bae, #31349b);
+        }
+        .dv_centr button .fa{
+            color: white; font-size: 35px; line-height: 65px; transform: scale(0);
+        }
+        .dv_centr.up_loding{
+            padding: 0;
+        }
+        .dv_centr.dv_centr.up_loding button{
+            background: #d9d9d9; margin-top: 0;
+        }
+        .dv_centr.up_loding button p{
+            display: none;
+        }
+        .dv_centr.up_loding button .loding{
+            width: 100%; transition: all 3s ease 0.6s;
+        }
+        .dv_centr.up_loding button.up_loded{
+            padding: 35px 0; width: 250px;
+        }
+        .dv_centr.up_loding button.up_loded .fa{
+            transform: scale(1); transition: transform 0.2s linear 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <div class="dv_centr">
+        <button>
+            <p>upload</p>
+            <div class="loding"></div>
+            <div class="fa fa-check"></div>
+        </button>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            $('button').click(function(){
+                $('button').parent().addClass('up_loding');
+                setTimeout(function(){
+                    $('button').addClass('up_loded');
+                }, 3400);
+                setTimeout(function(){
+                    alert('File uploaded Successfully!!');
+                    $('button').parent().removeClass('up_loding');
+                    $('button').removeClass('up_loded');
+                }, 4200);
+            });
+        });
+    </script>
+</body>
+</html>

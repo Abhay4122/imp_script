@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button slow motion</title>
+    <style>
+        .btn_slomo{
+            border: 1px solid #3498db; background: none; padding: 5px 10px; font-size: 20px;
+            cursor: pointer; transition: 0.3s; position: relative; overflow: hidden;
+        }
+        .btn_slomo1, .btn_slomo2{
+            color: #3498db;
+        }
+        .btn_slomo3, .btn_slomo4{
+            color: #fff;
+        }
+        .btn_slomo1:hover, .btn_slomo2:hover{
+            color: #fff;
+        }
+        .btn_slomo3:hover, .btn_slomo4:hover{
+            color: #3498db;
+        }
+        .btn_slomo::before{
+            content: ''; position: absolute; left: 0; width: 100%; height: 0%; background: #3498db;
+            z-index: -1; transition: 0.3s;
+        }
+        .btn_slomo1::before, .btn_slomo3::before{
+            top: 0; border-radius: 0 0 50% 50%;
+        }
+        .btn_slomo2::before, .btn_slomo4::before{
+            bottom: 0; border-radius: 50% 50% 0 0;
+        }
+        .btn_slomo3::before, .btn_slomo4::before{
+            height: 180%;
+        }
+        .btn_slomo1:hover::before, .btn_slomo2:hover::before{
+            height: 180%;
+        }
+        .btn_slomo3:hover::before, .btn_slomo4:hover::before{
+            height: 0%;
+        }
+    </style>
+</head>
+<body>
+    <button class="btn_slomo btn_slomo1">Hover me</button>
+    <button class="btn_slomo btn_slomo2">Hover me</button>
+    <button class="btn_slomo btn_slomo3">Hover me</button>
+    <button class="btn_slomo btn_slomo4">Hover me</button>
+</body>
+</html>

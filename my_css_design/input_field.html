@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Field</title>
+    <style>
+        .fo_rm_fild{
+            width: 50%; position: relative; height: 50px; overflow: hidden;
+        }
+        .fo_rm_fild input{
+            width: 100%; height: 100%; color: blue; padding-top: 10px; border: none; outline: none;
+        }
+        .fo_rm_fild label{
+            position: absolute; bottom: 0; left: 0%; width: 100%; height: 100%; pointer-events: none;
+            border-bottom: 1px solid black;
+        }
+        .fo_rm_fild label::after{
+            content: ''; position: absolute; left: 0; bottom: -1px; height: 100%; width: 100%;
+            border-bottom: 2px solid blue; transform: translateX(-100%); transition: transform 0.3s ease;
+        }
+        .lebl_content{
+            position: absolute; bottom: 5px; left: 0; transition: all 0.3s ease;
+        }
+        .fo_rm_fild input:focus + .lebl_nam .lebl_content, .fo_rm_fild input:valid + .lebl_nam .lebl_content{
+            transform: translateY(-150%); font-size: 16px; color: blue;
+        }
+        .fo_rm_fild input:focus + .lebl_nam::after, .fo_rm_fild input:valid + .lebl_nam::after{
+            transform: translateX(0%);
+        }
+    </style>
+</head>
+<body>
+    <div class="fo_rm_fild">
+        <input type="text" name="name" id="name" autocomplete="off" required>
+        <label for="name" class="lebl_nam">
+            <span class="lebl_content">Name</span>
+        </label>
+    </div>
+</body>
+</html>

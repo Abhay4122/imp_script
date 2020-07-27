@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Ripple Effect</title>
+    <style>
+        *{
+			font-family: candara;
+		}
+
+        /* Style without js */
+        /* button{
+			border: none; outline: none; background-color: #29D; color: #fff; padding: 8px 20px;
+            border-radius: 3px; box-shadow: 0 2px 2px #BBB; position: relative; overflow: hidden;
+		}
+		button::before{
+			content: ''; position: absolute; background-color: #EEE; padding: 50%; border-radius: 50%; left: 50%;
+            top: 50%; transform: translate(-50%, -50%) scale(1); opacity: 0; transition: transform 1s, opacity 1s;
+		}
+		button:active::before{
+			transition: 0s; opacity: 1;  transform: translate(-50%, -50%) scale(0);
+		} */
+
+        /* Style with js */
+        .btn_riple{
+			border: none; outline: none; background-color: #29D; color: #fff; padding: 8px 20px;
+			border-radius: 3px; box-shadow: 0 2px 2px #BBB; position: relative; overflow: hidden;
+            text-decoration: none;
+		}
+		.btn_riple::before{
+			content: ''; position: absolute; background-color: #EEE; padding: 50%;
+			border-radius: 50%; left: calc(100% * var(--ripple-x)); top: calc(100% * var(--ripple-y));
+			transform: translate(-50%, -50%) scale(1); opacity: 0; transition: transform 1s, opacity 1s;
+		}
+		.btn_riple:active::before{
+			transition: 0s; opacity: 1; transform: translate(-50%, -50%) scale(0);
+		}
+    </style>
+</head>
+<body>
+    <button class="btn_riple">Button 1</button>
+    <a href="#" class="btn_riple">Button 2</a>
+    <script>
+        var root = document.documentElement;
+		document.addEventListener('mousedown', ev => {
+			var el = ev.target;
+			var x = (ev.clientX - el.offsetLeft) / el.offsetWidth;
+			var y = (ev.clientY - el.offsetTop) / el.offsetHeight;
+			root.style.setProperty('--ripple-x', x);
+			root.style.setProperty('--ripple-y', y);
+		})
+    </script>
+</body>
+</html>

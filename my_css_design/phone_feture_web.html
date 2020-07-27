@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="main">
+        <nav>
+            <div class="logo">
+                <img src="images/logo.png" alt="">
+            </div>
+            <div class="nav_links">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Phone</a></li>
+                    <li><a href="#">Accessories</a></li>
+                    <li><a href="#">Cart</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="in_fo">
+            <div class="over_lay"></div>
+            <img src="images/mobile.png" class="mob_ile" alt="">
+            <div id="cir_cle">
+                <div class="fea_ture fea_ture_one">
+                    <img src="images/camera.png" alt="">
+                    <div>
+                        <h1>Camera</h1>
+                        <p>13MP, Wide Angle Camera</p>
+                    </div>
+                </div>
+                <div class="fea_ture fea_ture_two">
+                    <img src="images/processor.png" alt="">
+                    <div>
+                        <h1>Processor</h1>
+                        <p>Snapdragon octa-core 11nm</p>
+                    </div>
+                </div>
+                <div class="fea_ture fea_ture_three">
+                    <img src="images/display.png" alt="">
+                    <div>
+                        <h1>Display</h1>
+                        <p>6.5 Inch, Mini-Drop Fullscreen</p>
+                    </div>
+                </div>
+                <div class="fea_ture fea_ture_four">
+                    <img src="images/battery.png" alt="">
+                    <div>
+                        <h1>Battery</h1>
+                        <p>5000mAh, 720Hrs Standby</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="con_trols">
+            <img src="images//arrow.png" alt="" id="up_btn">
+            <h3>Features</h3>
+            <img src="images//arrow.png" alt="" id="down_btn">
+        </div>
+    </div>
+
+    <script>
+        var circle = document.getElementById('cir_cle');
+        var up_btn = document.getElementById('up_btn');
+        var down_btn = document.getElementById('down_btn');
+
+        var rotate_value = circle.style.transform;
+        var rotate_sum;
+
+        up_btn.onclick = function(){
+            rotate_sum = rotate_value + 'rotate(-90deg)';
+            circle.style.transform = rotate_sum;
+            rotate_value = rotate_sum;
+        }
+        down_btn.onclick = function(){
+            rotate_sum = rotate_value + 'rotate(90deg)';
+            circle.style.transform = rotate_sum;
+            rotate_value = rotate_sum;
+        }
+    </script>
+</body>
+</html>

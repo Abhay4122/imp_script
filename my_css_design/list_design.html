@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List Design</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <style>
+        .spikr_webi_ro{
+            width: 100%; min-height: 100px; padding: 5px 0; text-align: center; border-radius: 10px;
+            transition: ease 0.1s;
+        }
+        .spikr_webi_col{
+            display: table; height: 100%; float: left;
+        }
+        .spikr_webi_col div{
+            display: table-cell; vertical-align: middle;
+        }
+        .spikr_webi_action_btn{
+            position: relative; width: 30px; height: 30px; transition: ease 0.5s;
+        }
+        .spikr_webi_action_btn span{
+            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 20px;
+        }
+        .spikr_webi_action_btn:hover{
+            cursor: pointer; transform: scale(1.4);
+        }
+        .spikr_webi_ro:hover{
+            transform: scale(1.05); box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+        }
+        @media screen and (max-width: 768px){
+            .spikr_webi_ro{
+                min-height: 150px;
+            }
+            .spikr_webi_col{
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-2">
+                <h5>Publish Date</h5>
+            </div>
+            <div class="col-md-5">
+                <h5>Webinar Title</h5>
+            </div>
+            <div class="col-md-2">
+                <h5>Type</h5>
+            </div>
+            <div class="col-md-1">
+                <h5>Sale</h5>
+            </div>
+            <div class="col-md-1">
+                <h5>Status</h5>
+            </div>
+            <div class="col-md-1">
+                <h5>Actions</h5>
+            </div>
+        </div>
+        <div class="row">
+            <div class="spikr_webi_ro" style="border-left: 5px solid #0CC27E; border-bottom: 1px solid #ccc; border-top: 1px solid #ccc; border-right: 1px solid #ccc;">
+                <div class="col-md-2 m-0 px-1 spikr_webi_col">
+                    <div>Apr 17, 2020</div>
+                </div>
+                <div class="col-md-5 m-0 px-1 spikr_webi_col">
+                    <div>The New Discharge Planning Standards: Meeting the Hospital CoPs 2019</div>
+                </div>
+                <div class="col-md-2 m-0 px-1 spikr_webi_col">
+                    <div>Automated Live</div>
+                </div>
+                <div class="col-md-1 m-0 px-1 spikr_webi_col">
+                    <div>10/100</div>
+                </div>
+                <div class="col-md-1 m-0 px-1 spikr_webi_col">
+                    <div>Pending</div>
+                </div>
+                <div class="col-md-1 m-0 px-1 spikr_webi_col">
+                    <div style="color: #0CC27E;">
+                        <div class="spikr_webi_action_btn"><span class="fas fa-plane"></span></div>
+                        <div class="spikr_webi_action_btn"><span class="fas fa-plug"></span></div>
+                        <div class="spikr_webi_action_btn"><span class="fas fa-envelope"></span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

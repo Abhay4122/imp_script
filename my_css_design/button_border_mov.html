@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Border Move</title>
+    <style>
+        .btn_mov{
+            width: 200px; height: 60px; background: none; border: 4px solid; color: #3498db;
+            font-weight: 700; text-transform: uppercase; cursor: pointer; font-size: 16px;
+            position: relative;
+        }
+        .btn_mov::before, .btn_mov::after{
+            content: ''; position: absolute; width: 14px; height: 4px; background: #fff;
+            transform: skewX(50deg); transition: 0.4s linear;
+        }
+        .btn_mov::before{
+            top: -4px; left: 10%;
+        }
+        .btn_mov::after{
+            bottom: -4px; right: 10%;
+        }
+        .btn_mov:hover::before{
+            left: 80%;
+        }
+        .btn_mov:hover::after{
+            right: 80%;
+        }
+    </style>
+</head>
+<body>
+    <button class="btn_mov">Hover me</button>
+</body>
+</html>

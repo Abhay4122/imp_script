@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Modern Css</title>
+	<style type="text/css">
+		.black{
+			background-color: rgba(0,0,0,.2);
+		}
+		.red{
+			background-color: rgba(255,0,0,.2);
+		}
+		.green{
+			background-color: rgba(0,255,0,.2);
+		}
+		.blue{
+			background-color: rgba(0,0,255,.2);
+		}
+
+		.parent{
+			height: 300px; max-width: 500px; resize: both; overflow-y: auto;
+		}
+
+		/*style for super center div*/
+		.parent_center{
+			display: grid; place-items: center;
+		}
+
+		/*style for flex box responsive*/
+		.parent_flex_box{
+			display: flex; flex-wrap: wrap; justify-content: center;
+		}
+		.chield_box{
+			background-color: rgba(0,255,0,.2); margin: 5px;
+			flex: 1 1 150px; /*Streching*/
+			/*flex: 0 1 150px;*/ /*No Streching*/
+		}
+
+		/*style for min max*/
+		.chield_min_max{
+			display: grid; grid-template-columns: minmax(150px, 25%) 1fr /*auto*/;
+		}
+
+		/*style for pancake stack*/
+		.stack_parent{
+			display: grid; grid-template-rows: auto 1fr auto;
+		}
+	</style>
+</head>
+<body>
+	<!-- place-items: center; -->
+	<div class="parent parent_center red">
+		<div class="green" contenteditable>
+			Hello World
+		</div>
+	</div>
+	<hr>
+	<!-- flex: 0 1 <baseWidth>; -->
+	<div class="parent parent_flex_box red">
+		<div class="chield_box green parent_center"> <p>1</p> </div>
+		<div class="chield_box green parent_center"> <p>1</p> </div>
+		<div class="chield_box green parent_center"> <p>1</p> </div>
+	</div>
+	<hr>
+	<!-- grid-template-columns: minmax(<min>, <max>); -->
+	<div class="parent chield_min_max red">
+		<div class="green">
+			min: 150px / max: 25%
+		</div>
+		<div class="blue">
+			This element takes the second grid position (1fr), meaning it takes up the rest of the remaining space.
+		</div>
+	</div>
+	<hr>
+	<!-- grid-template-rows: auto 1fr auto; -->
+	<div class="parent stack_parent red">
+		<div class="black" contenteditable>Header</div>
+		<div class="green" contenteditable>Main</div>
+		<div class="blue" contenteditable>Footer</div>
+	</div>
+</body>
+</html>
