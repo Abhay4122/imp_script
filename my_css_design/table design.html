@@ -1,0 +1,112 @@
+	<!DOCTYPE html>
+<html>
+<head>
+	<title>Table design</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+	<script type="text/javascript"  src=" https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
+	<style type="text/css">
+	/* style for table style */
+	.tab_le{
+		width: 100%;
+		border-radius: 10px;
+		box-shadow: 0 0 10px #ccc;
+	}
+	.tab_le thead tr th{
+		background-color: #454b50;
+		padding: 10px;
+		text-align: center;
+		color: #fff;
+	}
+	.tab_le thead tr th:first-child{
+		border-top-left-radius: 10px;
+	}
+	.tab_le thead tr th:last-child{
+		border-top-right-radius: 10px;
+	}
+	.tab_le tbody tr:nth-child(even){
+		background-color: rgba(0,0,0,.05);
+	}
+	.tab_le tbody tr td{
+		text-align: center; padding: 12px 0; color: #000; font-weight: 600;
+	}
+	.tab_le tbody tr:last-child td:first-child{
+		border-bottom-left-radius: 10px;
+	}
+	.tab_le tbody tr:last-child td:last-child{
+		border-bottom-right-radius: 10px;
+	}
+
+	/* Data table paginator style */
+	.dataTables_wrapper .dataTables_paginate .paginate_button{
+		padding: 0px 10px;
+	}
+	</style>
+</head>
+<body>
+	<table id="tab_le" class="tab_le">
+		<thead class="t_head">
+			<tr>
+				<th>Head1</th>
+				<th>Head1</th>
+				<th>Head1</th>
+				<th>Head1</th>
+				<th>Head1</th>
+				<th>Head1</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Column2</td>
+				<td>Column2</td>
+				<td>Column2</td>
+				<td>Column2</td>
+				<td>Column2</td>
+				<td>Column2</td>
+			</tr>
+			<tr>
+				<td>Column3</td>
+				<td>Column3</td>
+				<td>Column3</td>
+				<td>Column3</td>
+				<td>Column3</td>
+				<td>Column3</td>
+			</tr>
+			<tr>
+				<td>Column4</td>
+				<td>Column4</td>
+				<td>Column4</td>
+				<td>Column4</td>
+				<td>Column4</td>
+				<td>Column4</td>
+			</tr>
+			<tr>
+				<td>Column5</td>
+				<td>Column5</td>
+				<td>Column5</td>
+				<td>Column5</td>
+				<td>Column5</td>
+				<td>Column5</td>
+			</tr>
+		</tbody>
+	</table>
+	<script>
+		$('.tab_le').DataTable({
+			'language': {
+				'search': '',
+				'lengthMenu': '_MENU_'
+			}
+		});
+
+		$('#tab_le_filter label').addClass('m-1');
+		$('#tab_le_filter input').addClass('form-control');
+		$('#tab_le_filter input').attr('placeholder', 'Search ...');
+		$('#tab_le_length select').addClass('form-control');
+		$('#tab_le_length select').addClass('py-0');
+	</script>
+</body>
+</html>
